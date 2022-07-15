@@ -1,15 +1,21 @@
 package org.xpdojo.bank;
 
+
+import org.hamcrest.core.Is;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matcher.*;
+
 
 public class AccountTest {
 
+
     @Test
-	@Disabled
-    public void depositAnAmountToIncreaseTheBalance() {
-        assertThat("your first test").isBlank();
+    public void testSomething(){
+        Account account = new Account();
+        account.deposite(100);
+        assertThat(100, Is.is(account.getBalance()));
     }
 }
