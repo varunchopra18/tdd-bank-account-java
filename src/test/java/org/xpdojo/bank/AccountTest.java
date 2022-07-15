@@ -11,6 +11,11 @@ import static org.hamcrest.Matcher.*;
 
 public class AccountTest {
 
+    @Test
+    public void initializeAccountWithZeroBalance(){
+        Account account = new Account();
+        assertThat(0,Is.is(account.getBalance()));
+    }
 
     @Test
     public void testSomething(){
