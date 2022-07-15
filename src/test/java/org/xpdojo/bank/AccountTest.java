@@ -23,4 +23,19 @@ public class AccountTest {
         account.deposite(100);
         assertThat(100, Is.is(account.getBalance()));
     }
+
+    public void deplositeMoneyTwice(){
+        Account account = new Account();
+        account.deposite(100);
+        account.deposite(50);
+        assertThat(150, Is.is(account.getBalance()));
+    }
+
+    public void depositAndWithDrawMoney(){
+        Account account = new Account();
+        account.deposite(100);
+        account.deposite(50);
+        account.withdraw(50);
+        assertThat(100, Is.is(account.getBalance()));
+    }
 }
