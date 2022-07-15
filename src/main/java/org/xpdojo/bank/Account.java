@@ -11,7 +11,12 @@ public class Account {
         return balance;
     }
 
-    public void withdraw(int amount) {
-        balance = balance-amount;
+    public void withdraw(int amount) throws Exception {
+        if(balance-amount >= 0){
+            balance = balance-amount;
+        }
+        else{
+            throw new Exception("Not Enough Balance!!");
+        }
     }
 }
